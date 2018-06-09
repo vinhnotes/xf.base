@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="BaseProject.Views.HomePage"
+             xmlns:controls="clr-namespace:BaseProject.Controls;assembly=BaseProject" 
+             Title="Home">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="Create" Icon="SearchIcon.png" Command="{Binding GotoSearch}"></ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout>
+            <controls:InfiniteListView x:Name="ItemsListView" 
+                      ItemsSource="{Binding Items}" 
+                      VerticalOptions="FillAndExpand" 
+                      HasUnevenRows="true" 
+                      RefreshCommand="{Binding LoadItemsCommand}" 
+                      IsPullToRefreshEnabled="true" 
+                      LoadMoreCommand="{Binding LoadMoreCommand}"
+                      ItemTemplate="{StaticResource HomeListViewCell}">
+            </controls:InfiniteListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

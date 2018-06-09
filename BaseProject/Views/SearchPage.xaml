@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="BaseProject.Views.SearchPage">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height = "20"/>
+                <RowDefinition Height = "*"/>
+                <RowDefinition Height = "8*"/>
+            </Grid.RowDefinitions>
+            <BoxView Grid.RowSpan="2" BackgroundColor="{StaticResource LightGrayTextColor}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
+            <SearchBar BackgroundColor="#00000000" Grid.Row="1" Placeholder="Search" PlaceholderColor="{StaticResource LightTextColor}" CancelButtonColor="{StaticResource LightTextColor}" VerticalOptions="Center"/>
+            <ListView x:Name="SearchResult" Grid.Row="2"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
